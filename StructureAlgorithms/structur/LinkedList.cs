@@ -1,6 +1,6 @@
 ﻿using System;
 
-    namespace StructureAlgorithms.Structure
+    namespace StructureAlgorithms.structur
 {
     public class LinkedList<T>
     {
