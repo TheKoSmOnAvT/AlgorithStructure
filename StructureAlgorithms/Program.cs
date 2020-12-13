@@ -46,19 +46,29 @@ namespace StructureAlgorithms
             //index = Search.binarySearch(mas2, 8);
             //Console.WriteLine(index);
 
-            Stack<int> stack = new Stack<int>();
-            stack.Push(1);
-            stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
-            stack.Push(5);
+            //Stack<int> stack = new Stack<int>();
+            //stack.Push(1);
+            //stack.Push(1);
+            //stack.Push(2);
+            //stack.Push(3);
+            //stack.Push(5);
 
-            while (!stack.isEmpty())
+            //while (!stack.isEmpty())
+            //{
+            //    Console.WriteLine(stack.Pop());
+            //}
+
+            Queue<int> queue = new Queue<int>();
+            queue.Push(1);
+            queue.Push(1);
+            queue.Push(2);
+            queue.Push(3);
+            queue.Push(5);
+
+            while (!queue.isEmpty())
             {
-                Console.WriteLine(stack.Pop());
+                Console.WriteLine(queue.Pop());
             }
-
-
 
 
 
