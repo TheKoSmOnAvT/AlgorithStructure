@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using StructureAlgorithms.Algorithms;
 using StructureAlgorithms.structur;
 
@@ -58,19 +59,59 @@ namespace StructureAlgorithms
             //    Console.WriteLine(stack.Pop());
             //}
 
-            Queue<int> queue = new Queue<int>();
-            queue.Push(1);
-            queue.Push(1);
-            queue.Push(2);
-            queue.Push(3);
-            queue.Push(5);
+            //Queue<int> queue = new Queue<int>();
+            //queue.Push(1);
+            //queue.Push(1);
+            //queue.Push(2);
+            //queue.Push(3);
+            //queue.Push(5);
 
-            while (!queue.isEmpty())
+            //while (!queue.isEmpty())
+            //{
+            //    Console.WriteLine(queue.Pop());
+            //}
+
+            //Console.WriteLine("start");
+            //var graph = new Dictionary<int, IEnumerable<int>>();
+            //graph.Add(1, new List<int>() { 2,3});
+            //graph.Add(3, new List<int>() { 5,6,7 });
+            //graph.Add(2, new List<int>() { 10,11,12});
+            //graph.Add(6, new List<int>() { 1, 2, 3 });
+
+            //var gs = new GraphSearch();
+            //gs.widthSearch(graph, 3, 10);
+
+            //Console.WriteLine("end");
+
+            var gs = new GraphSearch();
+            //Dictionary<Tkey, Dictionary<Tkey, double>> graph, Dictionary< Tkey, double> costs, Dictionary<Tkey, Tkey> parents
+
+            var graph = new Dictionary<string, Dictionary<string, double>>();
+            var a = new Dictionary<string, double>();
+            a.Add("fin", 1);
+            graph.Add("a", a);
+            var b = new Dictionary<string, double>();
+            b.Add("a", 3);
+            b.Add("fin", 5);
+            graph.Add("b", b);
+            graph.Add("fin", null);
+
+            Dictionary<string, double> costs = new Dictionary<string, double>();
+            costs.Add("a",6);
+            costs.Add("b", 2);
+            costs.Add("fin", double.PositiveInfinity);
+
+            Dictionary<string, string> parents = new Dictionary<string, string>();
+            parents.Add("a","start");
+            parents.Add("b", "start");
+            parents.Add("in", null);
+            Console.WriteLine("start");
+            var res  = gs.deikstraSearch(graph, costs, parents);
+
+            foreach (var obj in res)
             {
-                Console.WriteLine(queue.Pop());
+                Console.WriteLine(obj);
             }
-
-
 
             Console.ReadKey();
 
